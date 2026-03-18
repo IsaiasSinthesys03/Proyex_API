@@ -6,8 +6,8 @@ WORKDIR /App
 COPY . ./
 
 # Restaura las dependencias y compila
-RUN dotnet restore
-RUN dotnet publish -c Release -o out
+RUN dotnet restore Kiosco.sln
+RUN dotnet publish Kiosco.API/Kiosco.API.csproj -c Release -o out
 
 # Usa la imagen oficial de ASP.NET en tiempo de ejecución
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
